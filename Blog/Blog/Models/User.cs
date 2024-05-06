@@ -1,7 +1,4 @@
-﻿using System.ComponentModel.DataAnnotations.Schema;
-using System.ComponentModel.DataAnnotations;
-
-namespace Blog.Models
+﻿namespace Blog.Models
 {
     public class User
     {
