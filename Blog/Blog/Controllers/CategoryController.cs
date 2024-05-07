@@ -6,7 +6,7 @@ using Microsoft.EntityFrameworkCore;
 namespace Blog.Controllers
 {
     [ApiController]
-    public class CategoryModel : ControllerBase
+    public class CategoryController : ControllerBase
     {
 
         [HttpGet("v1/categories")]
@@ -20,7 +20,7 @@ namespace Blog.Controllers
         public async Task<IActionResult> GetByIdAsync([FromRoute] int id, [FromServices] BlogDataContext context)
         {
             var categorie = await context.Categories.FirstOrDefaultAsync(x => x.Id == id);
-            if(categorie == null)
+            if (categorie == null)
                 return NotFound();
             return Ok(categorie);
         }
