@@ -35,7 +35,7 @@ namespace Blog.Controllers
             }
             catch (Exception ex)
             {
-                return StatusCode(500, "05X02 - Falha interna no servidor")
+                return StatusCode(500, "05X02 - Falha interna no servidor");
             }
         }
 
