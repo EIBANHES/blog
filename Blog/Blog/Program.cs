@@ -1,4 +1,5 @@
 using Blog.Data;
+using Blog.Services;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -10,6 +11,9 @@ builder.Services.AddControllers().ConfigureApiBehaviorOptions(options =>
 }); // nao valida mais com o modelstate
 
 builder.Services.AddDbContext<BlogDataContext>(); // disponibilizando o contexto como serviço
+builder.Services.AddTransient<TokenService>(); // sempre criar um novo
+
+
 // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
